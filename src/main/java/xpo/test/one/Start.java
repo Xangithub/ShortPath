@@ -1,28 +1,29 @@
 package xpo.test.one;
 
-import com.sun.istack.internal.NotNull;
 import xpo.test.one.file.DataProvider;
 import xpo.test.one.file.FileProvider;
 import xpo.test.one.model.DataParse;
+import xpo.test.one.model.Map;
 import xpo.test.one.model.PathBuilder;
 import xpo.test.one.model.PathCreatable;
-import xpo.test.one.model.Vertex;
+import xpo.test.one.view.IDisplayMap;
+import xpo.test.one.view.MapDisplayOnConsole;
 
 public class Start {
-    @NotNull
     final DataProvider dataProvider = new FileProvider();
     DataParse dataParser;
 
-    @NotNull
     String data;
 
-
     public Start() {
-        data = dataProvider.getData();
+
+        data = dataProvider.getData(); //отдаёт строку
         if (data!= null) {
             dataParser = new DataParse(data);
-            Vertex[] arVertex=dataParser.getMatrix();
-            PathCreatable pathBuilder= new PathBuilder(arVertex);
+            Map map=dataParser.getMap();
+            PathCreatable pathBuilder= new PathBuilder(map);
+            IDisplayMap displayMap = new MapDisplayOnConsole();
+            displayMap.printMap(map);
         }
     }
 

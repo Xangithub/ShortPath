@@ -13,7 +13,7 @@ public class DataParseTest {
     public void RegexTest()
     {
         DataParse dataParse= new DataParse(str);
-        dataParse.checkSize(str);
+        dataParse.validateData(str);
 
     }
 }

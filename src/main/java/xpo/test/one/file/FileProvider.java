@@ -40,7 +40,7 @@ public class FileProvider implements DataProvider {
                 list = Files.readAllLines(fileName);
 
                 for (String s : list) {
-                    stringBuffer.append(s.trim());
+                    stringBuffer.append(s).append('\n');
                 }
 
             } catch (IOException e) {
@@ -49,8 +49,6 @@ public class FileProvider implements DataProvider {
             }
 
         }
-        int sizeInputData = stringBuffer.length();
-        if (sizeInputData != 100) System.err.println("Размер входных данных " + sizeInputData);
         return stringBuffer.toString();
     }
 }
