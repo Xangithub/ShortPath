@@ -25,16 +25,12 @@ public class DataParse {
 
     public DataParse(String str) {
         this.data = str;
-        System.out.println("Работает detect");
         detect(data);
-        System.out.println("Работает validate");
         validateData(data);
         arVertex = new Vertex[SIZE_INPUT_DATA];
-        System.out.println("Работает generate");
+        map = new Map(WIDE, HEIGHT, arVertex);
         generateData();
-        System.out.println("Работает convert");
         convert(data);
-        System.out.println("Матрица создана");
     }
 
     private void detect(String data) {
@@ -45,20 +41,6 @@ public class DataParse {
         System.out.printf("Подана карта размером ширина= %d высота= %d \n", WIDE, HEIGHT);
     }
 
-   /* public DataParse(Map map) {
-        this.WIDE=map.getWIDE();
-        this.HEIGHT=map.getHEIGHT();
-        this.SIZE_INPUT_DATA=WIDE*HEIGHT;
-        this.arVertex=map.getArVertex();
-
-        validateData(data);
-        System.out.println("Данные проверены");
-        generateData();
-        convert(data);
-        System.out.println("Матрица создана");
-        arVertex = new Vertex[SIZE_INPUT_DATA];
-    }*/
-
     private void generateData() {
         for (int i = 0; i < SIZE_INPUT_DATA; i++) {
             arVertex[i] = new Vertex(i);
@@ -68,7 +50,6 @@ public class DataParse {
 
 
     private void convert(String data) {
-//        System.out.println(data);
         for (int i = 0; i < SIZE_INPUT_DATA; i++) {
             char z = data.charAt(i);
             switch (z) {
@@ -97,9 +78,9 @@ public class DataParse {
             for (int i = 0; i < WIDE; i++) { //движение по столбцам i номер поля
                 int k = j * WIDE + i;
                 if (i != 0) arVertex[k].addNB(arVertex[k - 1]);
-                if (i != WIDE-1) arVertex[k].addNB(arVertex[k + 1]);
+                if (i != WIDE - 1) arVertex[k].addNB(arVertex[k + 1]);
                 if (j != 0) arVertex[k].addNB(arVertex[k - WIDE]);
-                if (j != HEIGHT-1) arVertex[k].addNB(arVertex[k + WIDE]);
+                if (j != HEIGHT - 1) arVertex[k].addNB(arVertex[k + WIDE]);
             }
         }
 
@@ -144,12 +125,9 @@ public class DataParse {
         }*/
     }
 
-    /**
-     *
-     * */
+
     public Map getMap() {
-        map = new Map(WIDE,HEIGHT,arVertex);
-        return map;
+        return this.map;
     }
 
 }

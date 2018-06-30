@@ -5,9 +5,8 @@ public class Map {
     public int HEIGHT;
     public int SIZE_INPUT_DATA;
     private Vertex[] arVertex;
-    private Vertex  startVertex;
-    private Vertex  endVertex;
-
+    private Vertex startVertex;
+    private Vertex endVertex;
 
 
     public Map(int wide, int height) {
@@ -28,7 +27,7 @@ public class Map {
         this.arVertex = arVertex;
     }
 
-//    private void clearDistance
+    //    private void clearDistance
     private void generateData() {
         for (int i = 0; i < SIZE_INPUT_DATA; i++) {
             arVertex[i] = new Vertex(i);
@@ -67,4 +66,5 @@ public class Map {
     public void setEndVertex(Vertex endVertex) {
         this.endVertex = endVertex;
     }
+
 }

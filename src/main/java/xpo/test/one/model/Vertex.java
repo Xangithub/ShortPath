@@ -10,7 +10,7 @@ public class Vertex {
     private int distance = 0;
     private boolean end_point;
     private boolean start_point;
-    private boolean path=false;
+    private boolean path = false;
 
     public Vertex(Integer vertex) {
         this.vertex = vertex;
@@ -26,6 +26,10 @@ public class Vertex {
 
     public void addNB(Vertex nb) {
         if (nbList.size() < 4) nbList.add(nb);
+    }
+
+    public ArrayList<Vertex> getNbList() {
+        return nbList;
     }
 
     public Integer getVertex() {

@@ -18,12 +18,18 @@ public class Start {
     public Start() {
 
         data = dataProvider.getData(); //отдаёт строку
-        if (data!= null) {
+        if (data != null) {
             dataParser = new DataParse(data);
-            Map map=dataParser.getMap();
-            PathCreatable pathBuilder= new PathBuilder(map);
+            Map map = dataParser.getMap();
+            PathCreatable pathBuilder = new PathBuilder(map);
             IDisplayMap displayMap = new MapDisplayOnConsole();
+            //печать входных данных для проверки корректности
+            // displayMap.printMap(map);
+            pathBuilder.buildPath(map);
+            //печать карты расстояний от точки старта
+            // ((MapDisplayOnConsole) displayMap).printDistanceMap(map);
             displayMap.printMap(map);
+
         }
     }
 
