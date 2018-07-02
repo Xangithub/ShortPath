@@ -10,3 +10,5 @@
 .	О	.	.	.<br>
 
 Затем строит маршрут и выводит в консоль.
+![Пример 1](https://github.com/Xangithub/ShortPath/blob/master/screen1.png)
+![Пример 2](https://github.com/Xangithub/ShortPath/blob/master/screen2.png)
