@@ -12,3 +12,5 @@
 Затем строит маршрут и выводит в консоль.<br>
 ![Пример 1](https://github.com/Xangithub/ShortPath/blob/master/screen1.png)<br>
 ![Пример 2](https://github.com/Xangithub/ShortPath/blob/master/screen2.png)<br>
+
+4.Проект проектировался в Idea 2018, JDK 1.8
