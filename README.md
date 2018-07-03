@@ -58,5 +58,6 @@ mvn exec:java -Dexec.mainClass=xpo.test.one.Start
 Затем строит маршрут и выводит в консоль.<br>
 ![Пример 1](https://github.com/Xangithub/ShortPath/blob/master/screen1.png)<br>
 ![Пример 2](https://github.com/Xangithub/ShortPath/blob/master/screen2.png)<br>
+![Пример 3](https://github.com/Xangithub/ShortPath/blob/master/screen3.png)<br>
 
 Проект сделан в IntelliJ Idea 2018, JDK 1.8
