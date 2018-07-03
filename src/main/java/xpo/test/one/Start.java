@@ -10,14 +10,19 @@ import xpo.test.one.view.IDisplayMap;
 import xpo.test.one.view.MapDisplayOnConsole;
 
 public class Start {
-    final DataProvider dataProvider = new FileProvider();
-    DataParse dataParser;
+    DataProvider dataProvider;
 
+
+    DataParse dataParser;
+    // final static String FILE = "ccor3.txt";
     String data;
 
-    public Start() {
+    public Start(String fileName) {
+        if (fileName == null) dataProvider = new FileProvider();
+        else dataProvider = new FileProvider(fileName);
 
-        data = dataProvider.getData(); //отдаёт строку
+        data = dataProvider.getData();
+
         if (data != null) {
             dataParser = new DataParse(data);
             Map map = dataParser.getMap();
@@ -34,7 +39,11 @@ public class Start {
     }
 
     public static void main(String[] args) {
-        new Start();
+        String fileName = null;
+        if (args.length > 0) {
+            fileName = args[0];
+        }
+        new Start(fileName);
     }
 
 }

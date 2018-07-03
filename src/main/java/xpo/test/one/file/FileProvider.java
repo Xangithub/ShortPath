@@ -25,8 +25,16 @@ public class FileProvider implements DataProvider {
         }
     }
 
-    public FileProvider(Path fileName) {
-        this.fileName = fileName;
+    public FileProvider(String fileNameParam) {
+        if(fileNameParam==null) {
+            System.err.println("файл "+fileNameParam+" не задан Выход из приложения");
+            System.exit(1);
+        }
+        this.fileName = Paths.get(fileNameParam);
+        if (!Files.exists(fileName)) {
+            System.err.println("файл "+fileNameParam+" не задан Выход из приложения");
+            System.exit(1);
+        }
     }
 
     @Override
@@ -48,5 +56,13 @@ public class FileProvider implements DataProvider {
 
         }
         return stringBuffer.toString();
+    }
+
+    public Path getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(Path fileName) {
+        this.fileName = fileName;
     }
 }
