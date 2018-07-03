@@ -1,7 +1,5 @@
 package xpo.test.one.file;
 
-import com.sun.istack.internal.NotNull;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,11 +9,11 @@ import java.util.List;
 
 /**
  * класс призван обеспечить поставку данных из заданного текстового файла
- * если имя не задано, то по умолчанию имя файоа "coor.txt"
+ * если имя не задано, то по умолчанию имя файла "coor.txt"
  */
 
 public class FileProvider implements DataProvider {
-    @NotNull
+
     private Path fileName;
 
 
