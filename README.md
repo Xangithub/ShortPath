@@ -29,6 +29,8 @@
 
 1. Открыть папку с проектом в IntelliJ Idea и нажать Shift+F10 (Run)
 
+или через Maven (я использовал встроенный в Idea)
+
 2. mvn clean package
 
 в папке target проекта появится файл для запуска
@@ -44,7 +46,6 @@ java -jar graph-1.0-SNAPSHOT-jar-with-dependencies.jar
 или так
 
 mvn exec:java -Dexec.mainClass=xpo.test.one.Start
-
 
 
 Пример данных для входного файла<br>
