@@ -26,13 +26,13 @@ public class FileProvider implements DataProvider {
     }
 
     public FileProvider(String fileNameParam) {
-        if(fileNameParam==null) {
-            System.err.println("файл "+fileNameParam+" не задан Выход из приложения");
+        if (fileNameParam == null) {
+            System.err.println("файл " + fileNameParam + " не задан Выход из приложения");
             System.exit(1);
         }
         this.fileName = Paths.get(fileNameParam);
         if (!Files.exists(fileName)) {
-            System.err.println("файл "+fileNameParam+" не задан Выход из приложения");
+            System.err.println("файл " + fileNameParam + " не задан Выход из приложения");
             System.exit(1);
         }
     }
